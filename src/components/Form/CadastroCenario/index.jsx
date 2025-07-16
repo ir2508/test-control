@@ -1,6 +1,7 @@
 import styled from "styled-components"
+import { v4 as uuidv4 } from 'uuid';
 import InputText from "../../InputText"
-import Button from "../../Button"
+import AddButton from "../../AddButton"
 import { useContext, useState } from "react"
 import { CenarioContext } from "../../../contexts/CenarioContext"
 
@@ -21,6 +22,7 @@ const CadastroCenario = () => {
     const { mensagem, salvarCenario } = useContext(CenarioContext)
 
     const [cenario, setCenario] = useState({
+        uuid: uuidv4(),
         sistema: "",
         codigo: "",
         descricao: "",
@@ -36,6 +38,7 @@ const CadastroCenario = () => {
     const handleBotaoCadastrar = (cenario) => {
         salvarCenario(cenario)
         setCenario({
+            uuid: uuidv4(),
             sistema: "",
             codigo: "",
             descricao: "",
@@ -48,9 +51,9 @@ const CadastroCenario = () => {
             <InputText onCenarioChange={handleCenario} id="sistema" key="sistema" label="Sistema" value={cenario.sistema}/>
             <InputText onCenarioChange={handleCenario} id="codigo" key="codigo" label="Código"  value={cenario.codigo}/>
             <InputText onCenarioChange={handleCenario} id="descricao" key="descricao" label="Descritivo do Teste"  value={cenario.descricao}/>
-            <Button cenario={cenario} onSalvarCenario={handleBotaoCadastrar}>
+            <AddButton cenario={cenario} onSalvarCenario={handleBotaoCadastrar}>
                 Cadastrar Cenário
-            </Button>
+            </AddButton>
         </FormStyled>
     )
 }

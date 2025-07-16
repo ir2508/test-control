@@ -13,5 +13,9 @@ export const CenarioProvider = ({ children }) => {
         setTimeout(() => setMensagem(""), 5000)
     }
 
-    return <CenarioContext.Provider value={{ cenarios, mensagem, salvarCenario }}>{children}</CenarioContext.Provider>
+    const removerCenario = (uuid) => {
+        setCenarios((prev) => prev.filter((cenario) => cenario.uuid !== uuid))
+    }
+
+    return <CenarioContext.Provider value={{ cenarios, mensagem, salvarCenario, removerCenario }}>{children}</CenarioContext.Provider>
 }

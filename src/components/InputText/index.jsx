@@ -13,7 +13,7 @@ const InputStyled = styled.input`
 const InputText = ({ label, onCenarioChange, id, value }) => {
     return (
         <>
-            <label for={id}>{label}</label>
+            <label htmlFor={id}>{label}</label>
             <InputStyled value={value} name={id} id={id} onChange={(e) => onCenarioChange(id, e.target.value)} placeholder={`Informe o ${label}`} />
         </>
     )

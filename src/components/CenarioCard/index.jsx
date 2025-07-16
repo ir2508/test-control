@@ -1,5 +1,7 @@
 import styled from "styled-components"
-import Button from "../Button"
+import { useContext } from "react"
+import { CenarioContext } from "../../contexts/CenarioContext"
+import DeleteButton from "../DeleteButton"
 
 const CenarioCardStyled = styled.div`
     border: 1px solid #ccc;
@@ -21,7 +23,7 @@ const CenarioCardStyled = styled.div`
         height: 100px;
     }
 
-    .card-body div{
+    .card-body div {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
@@ -32,17 +34,22 @@ const CenarioCardStyled = styled.div`
     }
 
     .card-footer {
-        position: 0 ;
+        position: 0;
         text-align: center;
         padding: 30px;
     }
 
-    .card-footer button{
+    .card-footer button {
         background-color: var(--cor-botao-perigo);
     }
 `
 
 const CenarioCard = ({ dados }) => {
+    const { removerCenario } = useContext(CenarioContext)
+
+    const handleDeletarCenario = (uuid) => {
+        removerCenario(uuid)
+    }
     return (
         <CenarioCardStyled>
             <div className="card-header"></div>
@@ -58,7 +65,7 @@ const CenarioCard = ({ dados }) => {
                 </div>
             </div>
             <div className="card-footer">
-                <Button>Excluir Cenário</Button>
+                <DeleteButton idToDelete={dados.uuid} onDeletarCenario={handleDeletarCenario}>Excluir Cenário</DeleteButton>
             </div>
         </CenarioCardStyled>
     )

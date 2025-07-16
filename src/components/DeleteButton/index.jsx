@@ -9,13 +9,13 @@ const BotaoStyled = styled.button`
     font-size: 16px;
 `
 
-const Button = ({ children, cenario, onSalvarCenario}) => {
+const DeleteButton = ({ children, idToDelete, onDeletarCenario}) => {
     return (
         <BotaoStyled 
             onClick={
                 (event) => {
                     event.preventDefault()
-                    onSalvarCenario(cenario)
+                    onDeletarCenario(idToDelete)
                 }
             }
         >
@@ -24,4 +24,4 @@ const Button = ({ children, cenario, onSalvarCenario}) => {
     )
 }
 
-export default Button
+export default DeleteButton

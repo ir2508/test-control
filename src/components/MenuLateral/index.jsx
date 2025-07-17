@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import styled from "styled-components"
 
 const BarraLateralStyled = styled.aside`
@@ -39,10 +39,10 @@ const MenuLateral = () => {
         <BarraLateralStyled>
             <h1>Controle de testes automatizados</h1>
             <MenuNavegacaoStyled>
-                <Link className="menu-item" to="/">Inicio</Link>
-                <Link className="menu-item" to="/novo-cenario">Cadastrar cenário</Link>
-                <Link className="menu-item" to="/cenarios">Todos os cenários</Link>
-                <Link className="menu-item" to="/registrar-teste">Adicionar histórico</Link>
+                <NavLink className="menu-item" to="/">Inicio</NavLink>
+                <NavLink className="menu-item" to="/novo-cenario">Cadastrar cenário</NavLink>
+                <NavLink className="menu-item" to="/cenarios">Todos os cenários</NavLink>
+                <NavLink className="menu-item" to="/registrar-teste">Adicionar histórico</NavLink>
             </MenuNavegacaoStyled>
         </BarraLateralStyled>
     )

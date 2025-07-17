@@ -1,12 +1,14 @@
+import { FaTrashAlt } from "react-icons/fa";
 import styled from "styled-components"
 
 const BotaoStyled = styled.button`
-    background-color: var(--cor-botao-sucesso);
+    background-color: var(--cor-botao-perigo);
     border: 1px solid #CCC;
     color: #FFF;
-    padding: 15px 25px;
+    padding: 5px 15px;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 1em;
+    height: 50px;
 `
 
 const DeleteButton = ({ children, idToDelete, onDeletarCenario}) => {
@@ -19,7 +21,7 @@ const DeleteButton = ({ children, idToDelete, onDeletarCenario}) => {
                 }
             }
         >
-                {children}
+                <FaTrashAlt />
         </BotaoStyled>
     )
 }

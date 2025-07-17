@@ -5,7 +5,7 @@ const BotaoStyled = styled.button`
     border: 1px solid #ccc;
     color: #fff;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 1em;
     width: 400px;
     padding: 15px 25px;
     margin-top: 20px;

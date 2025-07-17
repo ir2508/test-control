@@ -2,6 +2,8 @@ import styled from "styled-components"
 import { useContext } from "react"
 import { CenarioContext } from "../../contexts/CenarioContext"
 import DeleteButton from "../DeleteButton"
+import ShowButton from "../ShowButton"
+import BadgeSistema from "../BadgeSistema"
 
 const CenarioCardStyled = styled.div`
     border: 1px solid #ccc;
@@ -16,6 +18,10 @@ const CenarioCardStyled = styled.div`
         background-image: url("src/images/logo-cypress.png");
         background-size: cover;
         background-repeat: no-repeat;
+        display: flex;
+        justify-content: flex-end;
+        padding: 20px;
+        box-sizing: border-box;
     }
 
     .card-body {
@@ -34,13 +40,12 @@ const CenarioCardStyled = styled.div`
     }
 
     .card-footer {
+        height: 50px;
         position: 0;
         text-align: center;
         padding: 30px;
-    }
-
-    .card-footer button {
-        background-color: var(--cor-botao-perigo);
+        display: flex;
+        gap: 10px;
     }
 `
 
@@ -52,20 +57,25 @@ const CenarioCard = ({ dados }) => {
     }
     return (
         <CenarioCardStyled>
-            <div className="card-header"></div>
+            <div className="card-header">
+                <BadgeSistema>{dados.sistema}</BadgeSistema>
+            </div>
             <div className="card-body">
                 <div>
                     <h4>Código:</h4> <span>{dados.codigo}</span>
                 </div>
-                <div>
-                    <h4>Sistema:</h4> <span>{dados.sistema}</span>
-                </div>
+
                 <div>
                     <h4>Descrição:</h4> <span>{dados.descricao}</span>
                 </div>
             </div>
             <div className="card-footer">
-                <DeleteButton idToDelete={dados.uuid} onDeletarCenario={handleDeletarCenario}>Excluir Cenário</DeleteButton>
+                <ShowButton idToDelete={dados.uuid} onDeletarCenario={handleDeletarCenario}>
+                    Visualizar
+                </ShowButton>
+                <DeleteButton idToDelete={dados.uuid} onDeletarCenario={handleDeletarCenario}>
+                    Excluir
+                </DeleteButton>
             </div>
         </CenarioCardStyled>
     )

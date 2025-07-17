@@ -4,9 +4,12 @@ const BotaoStyled = styled.button`
     background-color: var(--cor-botao-sucesso);
     border: 1px solid #ccc;
     color: #fff;
-    padding: 15px 25px;
     border-radius: 5px;
     font-size: 16px;
+    width: 400px;
+    padding: 15px 25px;
+    margin-top: 20px;
+    box-sizing: border-box;
 `
 
 const AddButton = ({ children, cenario, onSalvarCenario }) => {

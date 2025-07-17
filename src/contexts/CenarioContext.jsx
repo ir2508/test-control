@@ -7,8 +7,11 @@ export const CenarioProvider = ({ children }) => {
 
     const [cenarios, setCenarios] = useState([])
 
+    const [sistemas, setSistemas] = useState([])
+
     const salvarCenario = (cenario) => {
         setCenarios((prev) => [...prev, cenario])
+        adicionarSistema(cenario.sistema)
         setMensagem("Novo cenário adicionado!")
         setTimeout(() => setMensagem(""), 5000)
     }
@@ -17,5 +20,11 @@ export const CenarioProvider = ({ children }) => {
         setCenarios((prev) => prev.filter((cenario) => cenario.uuid !== uuid))
     }
 
-    return <CenarioContext.Provider value={{ cenarios, mensagem, salvarCenario, removerCenario }}>{children}</CenarioContext.Provider>
+    const adicionarSistema = (sistema) => {
+        if (!sistemas.find((s) => s.toLowerCase().trim() === sistema.toLowerCase().trim())) {
+            setSistemas((prev) => [...prev, sistema])
+        }
+    }
+
+    return <CenarioContext.Provider value={{ cenarios, sistemas, mensagem, salvarCenario, removerCenario }}>{children}</CenarioContext.Provider>
 }

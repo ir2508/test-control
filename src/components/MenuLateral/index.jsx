@@ -3,7 +3,6 @@ import styled from "styled-components"
 
 const BarraLateralStyled = styled.aside`
     position: relative;
-
     padding: 50px 20px;
     height: 100vh;
     width: 320px;

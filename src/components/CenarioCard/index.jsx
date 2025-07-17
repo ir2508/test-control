@@ -22,6 +22,7 @@ const CenarioCardStyled = styled.div`
         justify-content: flex-end;
         padding: 20px;
         box-sizing: border-box;
+        gap: 10px;
     }
 
     .card-body {
@@ -60,6 +61,7 @@ const CenarioCard = ({ dados }) => {
         <CenarioCardStyled>
             <div className="card-header">
                 <BadgeSistema>{dados.sistema}</BadgeSistema>
+                <BadgeSistema>{dados.spec}</BadgeSistema>
             </div>
             <div className="card-body">
                 <div>

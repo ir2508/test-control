@@ -4,6 +4,7 @@ import Inicio from "../pages/Inicio";
 import CadastrarCenario from "../pages/CadastrarCenario";
 import CadastrarHistorico from "../pages/CadastrarHistorico";
 import ListarCenarios from "../pages/ListarCEnarios";
+import Cenario from "../pages/Cenario";
 
 export const router = createBrowserRouter([
     {
@@ -13,6 +14,7 @@ export const router = createBrowserRouter([
             { index: true, element: <Inicio />},
             { path: 'novo-cenario', element: <CadastrarCenario />},
             { path: 'cenarios', element: <ListarCenarios />},
+            { path: 'cenarios/:id', element: <Cenario />},
             { path: 'registrar-teste', element: <CadastrarHistorico />},
         ]
     }

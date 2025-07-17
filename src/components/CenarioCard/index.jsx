@@ -43,8 +43,9 @@ const CenarioCardStyled = styled.div`
         height: 50px;
         position: 0;
         text-align: center;
-        padding: 30px;
+        padding: 30px 20px;
         display: flex;
+        justify-content: space-between;
         gap: 10px;
     }
 `
@@ -70,7 +71,7 @@ const CenarioCard = ({ dados }) => {
                 </div>
             </div>
             <div className="card-footer">
-                <ShowButton idToDelete={dados.uuid} onDeletarCenario={handleDeletarCenario}>
+                <ShowButton idToShow={dados.uuid}>
                     Visualizar
                 </ShowButton>
                 <DeleteButton idToDelete={dados.uuid} onDeletarCenario={handleDeletarCenario}>

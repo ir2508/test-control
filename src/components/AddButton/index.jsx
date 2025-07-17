@@ -12,6 +12,7 @@ const BotaoStyled = styled.button`
     box-sizing: border-box;
 `
 
+
 const AddButton = ({ children, cenario, onSalvarCenario }) => {
     return (
         <BotaoStyled

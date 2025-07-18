@@ -23,7 +23,7 @@ const SelectSistema = ({ onFiltroChange }) => {
         <DivSistemasStyled>
             <label htmlFor="filtroSistemas"></label>
             <SelectSistemasStyled onChange={(e) => onFiltroChange(e.target.value)} id="filtroSistemas">
-                <option value="todos" selected>Todos os sistemas</option>
+                <option value="todos" defaultValue={"todos"}>Todos os sistemas</option>
                 {sistemas.map((sistema) => (
                     <option key={sistema} value={sistema}>{String(sistema).charAt(0).toUpperCase() + String(sistema).slice(1).toLowerCase()}</option>
                 ))}

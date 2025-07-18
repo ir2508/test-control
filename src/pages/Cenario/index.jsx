@@ -18,10 +18,6 @@ const ContainerStyled = styled.div`
     h2 {
         flex: 1;
     }
-
-    pre {
-        margin: 20px;
-    }
 `
 
 const InfoSectionStyled = styled.section`
@@ -31,6 +27,7 @@ const InfoSectionStyled = styled.section`
 const JSONSectionStyled = styled.section`
     background-color: var(--cor-secundaria);
     min-width: 300px;
+    max-width: 400px;
     border-radius: 10px;
 
     h5 {
@@ -38,6 +35,11 @@ const JSONSectionStyled = styled.section`
         padding: 10px 20px;
         background-color: var(--cor-menu);
         border-radius: 10px 10px 0 0;
+    }
+
+    pre {
+        margin: 20px;
+        white-space: pre-wrap
     }
 `
 
@@ -59,7 +61,7 @@ const Cenario = () => {
         <>
             <SectionTitleStyled>
                 <h2>{cenarioFiltrado[0].descricao}</h2>
-                <NavLink to={`editar-cenario/${id}`}>
+                <NavLink to={`/editar-cenario/${id}`}>
                     <FaEdit size={"1.5em"} style={{color: "#FFF"}}/>
                 </NavLink>
             </SectionTitleStyled>

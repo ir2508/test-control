@@ -5,7 +5,7 @@ const InputStyled = styled.input`
     border-radius: 5px;
     border: 1px solid #ccc;
     font-size: 16px;
-    width: 400px;
+    width: 450px;
     background-color: var(--cor-secundaria);
     color: #fff;
     box-sizing: border-box; 

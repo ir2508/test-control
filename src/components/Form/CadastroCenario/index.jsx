@@ -17,7 +17,7 @@ const FormStyled = styled.form`
         padding: 5px 10px;
         border-radius: 3px;
         border: 1px solid #ccc;
-        width: 400px;
+        width: 450px;
     }
 `
 

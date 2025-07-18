@@ -6,14 +6,13 @@ const BotaoStyled = styled.button`
     color: #fff;
     border-radius: 5px;
     font-size: 1em;
-    width: 450px;
+    width: 400px;
     padding: 15px 25px;
     margin-top: 20px;
     box-sizing: border-box;
 `
 
-
-const AddButton = ({ children, cenario, onSalvarCenario }) => {
+const UpdateButton = ({ children, cenario, onSalvarCenario }) => {
     return (
         <BotaoStyled
             onClick={(event) => {
@@ -25,4 +24,4 @@ const AddButton = ({ children, cenario, onSalvarCenario }) => {
     )
 }
 
-export default AddButton
+export default UpdateButton

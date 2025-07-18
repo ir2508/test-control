@@ -5,11 +5,14 @@ import styled from "styled-components"
 const ContainerStyled = styled.div`
     display: flex;
     height: 100vh;
+    width: 100vw;
 
     .conteudo-principal {
-        flex-grow: 1;
+        flex: 1;
         padding: 50px;
         overflow-y: auto;
+        display: flex;
+        flex-direction: column;
     }
 `
 
